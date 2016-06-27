@@ -17,11 +17,17 @@ class CookieConsentServiceProvider extends ServiceProvider
             __DIR__.'/../config/laravel-cookie-consent.php' => config_path('laravel-cookie-consent.php'),
         ], 'config');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'cookieConsent');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'cookieConsent');
 
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-cookie-consent'),
         ], 'views');
+
+        $this->app->resolving(EncryptCookies::class, function (EncryptCookies $encryptCookies) {
+            $encryptCookies->disableFor(config('laravel-cookie-consent.cookie_name'));
+        });
+
+
 
         $this->app['view']->composer('cookieConsent::cookie-comply', function(View $view) {
 
@@ -29,7 +35,7 @@ class CookieConsentServiceProvider extends ServiceProvider
 
             EncryptCookies::disableFor($cookieConsentConfig['cookie_name']);
 
-            $alreadyAgreedWithCookies = true;
+            $alreadyAgreedWithCookies = $this->app['cookie']->has($cookieConsentConfig['cookie_name']);
 
             $view->with(compact('alreadyAgreedWithCookies', 'cookieConsentConfig'));
         });

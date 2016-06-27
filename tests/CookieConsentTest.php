@@ -7,6 +7,9 @@ class CookieConsentTest extends TestCase
     /** @test */
     public function it_tests()
     {
-        $this->assertTrue(true);
+        $view = view('layout')->render();
+
+        dd($view);
     }
+
 }

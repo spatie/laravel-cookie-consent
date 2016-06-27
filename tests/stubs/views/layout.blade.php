@@ -1,0 +1,2 @@
+Test
+@include('cookieConsent::index')

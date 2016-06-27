@@ -1,7 +1,7 @@
 @unless($alreadyAgreedWithCookies)
 
     <div id="cookieMessage">
-        @include('laravelCookieConsent::cookie-comply-dialog-content')
+        @include('laravelCookieConsent::dialogContents')
     </div>
 
     <script>
