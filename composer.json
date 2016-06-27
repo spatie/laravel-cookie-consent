@@ -3,7 +3,11 @@
     "description": "Make your Laravel app comply with the crazy EU cookie law",
     "keywords": [
         "spatie",
-        "laravel-cookie-comply"
+        "laravel-cookie-comply",
+        "cookie",
+        "comply",
+        "law",
+        "eu"
     ],
     "homepage": "https://github.com/spatie/laravel-cookie-comply",
     "license": "MIT",
@@ -16,19 +20,23 @@
         }
     ],
     "require": {
-        "php" : "^7.0"
+        "php" : "^7.0",
+        "illuminate/support": "^5.1",
+        "illuminate/view": "^5.1",
+        "illuminate/cookie": "^5.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.*"
+        "phpunit/phpunit": "5.*",
+        "orchestra/testbench": "^3.2"
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Spatie\\CookieConsent\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Test\\": "tests"
+            "Spatie\\CookieConsent\\Test\\": "tests"
         }
     },
     "scripts": {
