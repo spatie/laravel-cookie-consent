@@ -1,15 +1,15 @@
 {
-    "name": "spatie/laravel-cookie-comply",
+    "name": "spatie/laravel-cookie-consent",
     "description": "Make your Laravel app comply with the crazy EU cookie law",
     "keywords": [
         "spatie",
-        "laravel-cookie-comply",
+        "laravel-cookie-consent",
         "cookie",
         "comply",
         "law",
         "eu"
     ],
-    "homepage": "https://github.com/spatie/laravel-cookie-comply",
+    "homepage": "https://github.com/spatie/laravel-cookie-consent",
     "license": "MIT",
     "authors": [
         {
