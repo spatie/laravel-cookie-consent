@@ -52,7 +52,7 @@ return [
      * The name of the cookie in which we store if the user
      * cookie has agreed to accept the conditions.
      */
-    'cookie_name' => 'agreedWithCookies',
+    'cookie_name' => 'laravel_cookie_consent',
 ];
 ```
 
@@ -69,7 +69,7 @@ This will render the following dialog that, when styled, will look very much lik
  
 Please be aware that the package does not provide any styling, this is something you'll need to do yourself.
 
-When the user clicks "Allow cookies" an `agreedWithCookies` cookie will be set and the dialog will be removed from the DOM. On the next request Laravel will notice that the `agreedWithCookies` has been set and will not display the dialog again
+When the user clicks "Allow cookies" an `laravel_cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request Laravel will notice that the `laravel_cookie_consent` has been set and will not display the dialog again
 
 ## Customising the dialog texts
 
