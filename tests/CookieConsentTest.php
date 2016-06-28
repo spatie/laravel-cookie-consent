@@ -8,7 +8,7 @@ class CookieConsentTest extends TestCase
     public function it_provides_translations()
     {
         $this->assertTranslationExists('cookieConsent::texts.message');
-        $this->assertTranslationExists('cookieConsent::texts.button_text');
+        $this->assertTranslationExists('cookieConsent::texts.agree');
     }
 
     /** @test */
@@ -19,10 +19,13 @@ class CookieConsentTest extends TestCase
         $this->assertConsentDialogDisplayed($html);
     }
 
+    /** @test */
     public function it_will_not_show_the_cookie_consent_view_when_the_package_is_disabled()
     {
         $this->app['config']->set('laravel-cookie-consent.enabled', false);
 
-        $this;
+        $html = view('layout')->render();
+
+        $this->assertConsentDialogIsNotDisplayed($html);
     }
 }

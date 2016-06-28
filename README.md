@@ -48,6 +48,7 @@ If you discover any security related issues, please email freek@spatie.be instea
 ## Credits
 
 - [Freek Van der Herten](https://github.com/freekmurze)
+- [Willem Van Bockstal](https://github.com/willemvb)
 - [All Contributors](../../contributors)
 
 ## About Spatie

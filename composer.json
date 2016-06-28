@@ -17,6 +17,12 @@
             "email": "freek@spatie.be",
             "homepage": "https://spatie.be",
             "role": "Developer"
+        },
+        {
+            "name": "Willem Van Bockstal",
+            "email": "willem@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
         }
     ],
     "require": {
