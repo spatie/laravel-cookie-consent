@@ -103,6 +103,10 @@ php artisan vendor:publish --provider="Spatie\CookieConsent\CookieConsentService
 
 This will copy the `index` and `dialogContents` view files over to `resources/views/vendor/laravel-cookie-consent`. You probably only want to modify the `dialogContents` view. If you need to modify the JavaScript code of this package you can do so in the `index` view file.
 
+## Notice
+The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. If you want to be 100% sure that your website is ok, please check with a legal expert.
+
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
