@@ -1,8 +1,8 @@
 
 @if($cookieConsentConfig['enabled'] && !$alreadyConsentedWithCookies)
 
-    <div class="js-cookie-consent-message cookie-consent">
-        @include('cookieConsent::dialogContents')
+    <div class="js-cookie-consent cookie-consent">
+        @include('laravelCookieConsent::dialogContents')
     </div>
 
     <script>
@@ -15,7 +15,7 @@
             },
 
             hideCookieDialog: function () {
-                document.getElementsByClassName('js-cookie-message').style.display = "none";
+                document.getElementsByClassName('js-cookie-consent').style.display = "none";
             },
 
             setCookie: function (name, value, expirationInDays) {
