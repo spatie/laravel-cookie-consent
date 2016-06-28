@@ -7,7 +7,7 @@
         window.laravelCookieConsent = (function () {
 
             function consentWithCookies() {
-                setCookie('{{ $cookieConsentConfig['cookie_name'] }}' , 1, 365 * 20);
+                setCookie('{{ $cookieConsentConfig['cookie_name'] }}', 1, 365 * 20);
                 hideCookieDialog();
             }
 
