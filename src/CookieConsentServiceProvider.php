@@ -29,15 +29,15 @@ class CookieConsentServiceProvider extends ServiceProvider
 
 
 
-        $this->app['view']->composer('cookieConsent::cookie-comply', function(View $view) {
+        $this->app['view']->composer('cookieConsent::index', function(View $view) {
 
             $cookieConsentConfig = config('laravel-cookie-consent');
 
             EncryptCookies::disableFor($cookieConsentConfig['cookie_name']);
 
-            $alreadyAgreedWithCookies = $this->app['cookie']->has($cookieConsentConfig['cookie_name']);
+            $alreadyConsentedWithCookies = $this->app['cookie']->has($cookieConsentConfig['cookie_name']);
 
-            $view->with(compact('alreadyAgreedWithCookies', 'cookieConsentConfig'));
+            $view->with(compact('alreadyConsentedWithCookies', 'cookieConsentConfig'));
         });
     }
 

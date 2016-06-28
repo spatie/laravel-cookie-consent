@@ -1,7 +1,15 @@
 <?php
 
 return [
-    'cookie_name' => 'agreedWithCookies'
-    
-    
+
+    /**
+     * Use this setting to enable the cookie consent dialog.
+     */
+    'enabled' => env('COOKIE_CONSENT_ENABLED', true);
+
+    /**
+     * The name of the cookie in which we store if the user
+     * cookie has agreed to accept the conditions.
+     */
+    'cookie_name' => 'agreedWithCookies',
 ];
