@@ -26,7 +26,7 @@ class CookieConsentServiceProvider extends ServiceProvider
             __DIR__.'/../resources/lang' => base_path('resources/lang/vendor/laravel-cookie-consent'),
         ], 'lang');
 
-        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'cookieConsent');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cookieConsent');
 
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-cookie-consent.php', 'laravel-cookie-consent');
 
