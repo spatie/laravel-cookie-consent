@@ -1,21 +1,30 @@
-
 @if($cookieConsentConfig['enabled'] && !$alreadyConsentedWithCookies)
 
-    <div class="js-cookie-consent cookie-consent">
-        @include('cookieConsent::dialogContents')
-    </div>
+    @include('cookieConsent::dialogContents')
 
     <script>
 
         var laravelCookieConsent = {
 
             consentedWithCookies: function () {
-                this.setCookie({{ $cookieConsentConfig['cookie_name'] }}, 1, 365 * 20);
-                this.hideCookieDialog();
+                laravelCookieConsent.setCookie( '{{ $cookieConsentConfig['cookie_name'] }}' , 1, 365 * 20);
+                laravelCookieConsent.hideCookieDialog();
             },
 
             hideCookieDialog: function () {
-                document.getElementsByClassName('js-cookie-consent').style.display = "none";
+                var dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (var i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = "none";
+                }
+            },
+
+            init: function() {
+                var buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+                for (var i = 0; i < buttons.length; ++i) {
+                    buttons[i].addEventListener("click", laravelCookieConsent.consentedWithCookies);
+                }
             },
 
             setCookie: function (name, value, expirationInDays) {
@@ -26,7 +35,7 @@
             },
         }
 
-        document.getElementsByClassName('js-cookie-consent-agree').addEventListener("click", laravelCookieConsent.consentedWithCookies());
+        laravelCookieConsent.init();
     </script>
 
 @endif
