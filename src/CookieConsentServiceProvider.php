@@ -2,6 +2,7 @@
 
 namespace Spatie\CookieConsent;
 
+use Cookie;
 use Illuminate\Contracts\View\View;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Support\ServiceProvider;
@@ -17,25 +18,25 @@ class CookieConsentServiceProvider extends ServiceProvider
             __DIR__.'/../config/laravel-cookie-consent.php' => config_path('laravel-cookie-consent.php'),
         ], 'config');
 
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'cookieConsent');
-
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-cookie-consent'),
         ], 'views');
 
+        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'cookieConsent');
+
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-cookie-consent.php', 'laravel-cookie-consent');
+
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'cookieConsent');
+        
         $this->app->resolving(EncryptCookies::class, function (EncryptCookies $encryptCookies) {
             $encryptCookies->disableFor(config('laravel-cookie-consent.cookie_name'));
         });
-
-
 
         $this->app['view']->composer('cookieConsent::index', function(View $view) {
 
             $cookieConsentConfig = config('laravel-cookie-consent');
 
-            EncryptCookies::disableFor($cookieConsentConfig['cookie_name']);
-
-            $alreadyConsentedWithCookies = $this->app['cookie']->has($cookieConsentConfig['cookie_name']);
+            $alreadyConsentedWithCookies = Cookie::has($cookieConsentConfig['cookie_name']);
 
             $view->with(compact('alreadyConsentedWithCookies', 'cookieConsentConfig'));
         });
@@ -46,6 +47,6 @@ class CookieConsentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-cookie-consent.php', 'cookieConsent');
+
     }
 }

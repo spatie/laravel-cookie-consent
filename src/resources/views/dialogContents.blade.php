@@ -1,5 +1,5 @@
-You have to comply
+{!! trans('cookieConsent::texts.message') !!}
 
 <button class="js-cookie-consent-agree cookie-consent__agree">
-    Ok
+    {{ trans('cookieConsent::texts.button_text') }}
 </button>
