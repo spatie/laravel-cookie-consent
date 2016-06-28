@@ -4,38 +4,38 @@
 
     <script>
 
-        var laravelCookieConsent = {
+        window.laravelCookieConsent = (function () {
 
-            consentedWithCookies: function () {
-                laravelCookieConsent.setCookie( '{{ $cookieConsentConfig['cookie_name'] }}' , 1, 365 * 20);
-                laravelCookieConsent.hideCookieDialog();
-            },
+            function consentWithCookies() {
+                setCookie('{{ $cookieConsentConfig['cookie_name'] }}' , 1, 365 * 20);
+                hideCookieDialog();
+            }
 
-            hideCookieDialog: function () {
+            function hideCookieDialog() {
                 var dialogs = document.getElementsByClassName('js-cookie-consent');
 
                 for (var i = 0; i < dialogs.length; ++i) {
-                    dialogs[i].style.display = "none";
+                    dialogs[i].style.display = 'none';
                 }
-            },
+            }
 
-            init: function() {
-                var buttons = document.getElementsByClassName('js-cookie-consent-agree');
-
-                for (var i = 0; i < buttons.length; ++i) {
-                    buttons[i].addEventListener("click", laravelCookieConsent.consentedWithCookies);
-                }
-            },
-
-            setCookie: function (name, value, expirationInDays) {
+            function setCookie(name, value, expirationInDays) {
                 var date = new Date();
                 date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
-                var expires = "expires=" + date.toUTCString();
-                document.cookie = name + "=" + value + "; " + expires;
-            },
-        }
+                document.cookie = name + '=' + value + '; ' + 'expires=' + date.toUTCString();
+            }
 
-        laravelCookieConsent.init();
+            var buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (var i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
     </script>
 
 @endif
