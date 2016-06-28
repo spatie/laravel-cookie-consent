@@ -27,12 +27,12 @@ class CookieConsentServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-cookie-consent.php', 'laravel-cookie-consent');
 
         $this->loadViewsFrom(__DIR__.'/resources/views', 'cookieConsent');
-        
+
         $this->app->resolving(EncryptCookies::class, function (EncryptCookies $encryptCookies) {
             $encryptCookies->disableFor(config('laravel-cookie-consent.cookie_name'));
         });
 
-        $this->app['view']->composer('cookieConsent::index', function(View $view) {
+        $this->app['view']->composer('cookieConsent::index', function (View $view) {
 
             $cookieConsentConfig = config('laravel-cookie-consent');
 
@@ -47,6 +47,5 @@ class CookieConsentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 }

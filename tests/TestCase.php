@@ -36,8 +36,8 @@ abstract class TestCase extends OrchestraTestCase
     }
 
     /**
- * @param string $html
- */
+     * @param string $html
+     */
     protected function assertConsentDialogDisplayed($html)
     {
         $this->assertTrue($this->isConsentDialogDisplayed($html), 'Failed to assert that the consent dialog is displayed.');

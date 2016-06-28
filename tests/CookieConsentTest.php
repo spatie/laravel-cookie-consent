@@ -28,4 +28,16 @@ class CookieConsentTest extends TestCase
 
         $this->assertConsentDialogIsNotDisplayed($html);
     }
+
+    /** @test */
+    public function it_will_not_show_the_cookie_consent_view_when_the_user_has_already_consented()
+    {
+        $this->app['config']->set('laravel-cookie-consent.enabled', false);
+
+        cookie(config('laravel-cookie-consent.cookie_name'), 1);
+
+        $html = view('layout')->render();
+
+        $this->assertConsentDialogIsNotDisplayed($html);
+    }
 }
