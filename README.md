@@ -71,7 +71,7 @@ This will render the following dialog that, when styled, will look very much lik
  
 Please be aware that the package does not provide any styling, this is something you'll need to do yourself.
 
-When the user clicks "Allow cookies" an `laravel_cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request Laravel will notice that the `laravel_cookie_consent` has been set and will not display the dialog again
+When the user clicks "Allow cookies" a `laravel_cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request Laravel will notice that the `laravel_cookie_consent` has been set and will not display the dialog again
 
 ## Customising the dialog texts
 
@@ -104,7 +104,7 @@ php artisan vendor:publish --provider="Spatie\CookieConsent\CookieConsentService
 This will copy the `index` and `dialogContents` view files over to `resources/views/vendor/laravel-cookie-consent`. You probably only want to modify the `dialogContents` view. If you need to modify the JavaScript code of this package you can do so in the `index` view file.
 
 ## Notice
-The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. If you want to be 100% sure that your website is ok, please check with a legal expert.
+The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. This package will go a long way towards compliance, but if you want to be 100% sure that your website is ok, you should consult a legal expert.
 
 
 ## Changelog
