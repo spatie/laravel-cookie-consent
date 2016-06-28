@@ -23,14 +23,14 @@ class CookieConsentServiceProvider extends ServiceProvider
         ], 'views');
 
         $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('resources/lang/vendor/laravel-cookie-consent'),
+            __DIR__.'/../resources/lang' => base_path('resources/lang/vendor/laravel-cookie-consent'),
         ], 'lang');
 
         $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'cookieConsent');
 
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-cookie-consent.php', 'laravel-cookie-consent');
 
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'cookieConsent');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'cookieConsent');
 
         $this->app->resolving(EncryptCookies::class, function (EncryptCookies $encryptCookies) {
             $encryptCookies->disableFor(config('laravel-cookie-consent.cookie_name'));
