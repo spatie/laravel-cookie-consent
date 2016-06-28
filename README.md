@@ -27,7 +27,7 @@ Next up, the service provider must be registered:
 // config/app.php
 'providers' => [
     ...
-    Spatie\CookieConsentCookieConsentServiceProvider::class,
+    Spatie\CookieConsent\CookieConsentServiceProvider::class,
 
 ];
 ```
