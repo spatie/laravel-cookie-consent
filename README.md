@@ -23,7 +23,7 @@ composer require spatie/laravel-cookie-consent
 
 Next up, the service provider must be registered:
 
-```
+```php
 // config/app.php
 'providers' => [
     ...
