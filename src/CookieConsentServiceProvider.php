@@ -19,11 +19,11 @@ class CookieConsentServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-cookie-consent'),
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/cookieConsent'),
         ], 'views');
 
         $this->publishes([
-            __DIR__.'/../resources/lang' => base_path('resources/lang/vendor/laravel-cookie-consent'),
+            __DIR__.'/../resources/lang' => base_path('resources/lang/vendor/cookieConsent'),
         ], 'lang');
 
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cookieConsent');
