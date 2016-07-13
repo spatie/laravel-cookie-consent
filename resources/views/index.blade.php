@@ -22,7 +22,7 @@
             function setCookie(name, value, expirationInDays) {
                 var date = new Date();
                 date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
-                document.cookie = name + '=' + value + '; ' + 'expires=' + date.toUTCString();
+                document.cookie = name + '=' + value + '; ' + 'expires=' + date.toUTCString() +';path=/';
             }
 
             var buttons = document.getElementsByClassName('js-cookie-consent-agree');
