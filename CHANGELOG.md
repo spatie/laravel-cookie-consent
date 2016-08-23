@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-cookie-consent` will be documented in this file
 
+## 1.2.3 - 2016-08-23
+
+- add L5.3 compatiblity
+
 ## 1.2.2 - 2016-07-13
 
 - do not display the cookie warning when accepting cookies on a subpage
