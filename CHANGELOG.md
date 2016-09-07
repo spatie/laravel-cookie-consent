@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-cookie-consent` will be documented in this file
 
+## 1.3.0 - 2016-09-07
+
+- added Spanish translation
+
 ## 1.2.3 - 2016-08-23
 
 - add L5.3 compatiblity
