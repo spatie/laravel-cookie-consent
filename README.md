@@ -90,7 +90,7 @@ If you want to modify the text shown in the dialog you can publish the lang-file
 php artisan vendor:publish --provider="Spatie\CookieConsent\CookieConsentServiceProvider" --tag="lang"
 ```
 
-This will publish this file to `resources/lang/vendor/laravel-cookie-consent/en/texts.php`.
+This will publish this file to `resources/lang/vendor/cookieConsent/en/texts.php`.
 
  ```php
  
@@ -100,7 +100,7 @@ This will publish this file to `resources/lang/vendor/laravel-cookie-consent/en/
  ];
  ```
  
- If you want to translate the values to for example french, just copy that file over to `resources/lang/vendor/laravel-cookie-consent/fr/texts.php` and fill in the French translations.
+ If you want to translate the values to for example french, just copy that file over to `resources/lang/vendor/cookieConsent/fr/texts.php` and fill in the French translations.
  
 ### Customising the dialog contents
 
@@ -110,7 +110,7 @@ If you need full control over the contents of the dialog. You can publish the vi
 php artisan vendor:publish --provider="Spatie\CookieConsent\CookieConsentServiceProvider" --tag="views"
 ```
 
-This will copy the `index` and `dialogContents` view files over to `resources/views/vendor/laravel-cookie-consent`. You probably only want to modify the `dialogContents` view. If you need to modify the JavaScript code of this package you can do so in the `index` view file.
+This will copy the `index` and `dialogContents` view files over to `resources/views/vendor/cookieConsent`. You probably only want to modify the `dialogContents` view. If you need to modify the JavaScript code of this package you can do so in the `index` view file.
 
 ## Notice
 The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. This package will go a long way towards compliance, but if you want to be 100% sure that your website is ok, you should consult a legal expert.
