@@ -39,12 +39,22 @@ class CookieConsentMiddleware
         return $this->addCookieConsentScriptToResponse($response);
     }
 
-    protected function containsBodyTag(Response $response): bool
+    /**
+     * @param \Illuminate\Http\Response $response
+     *
+     * @return bool
+     */
+    protected function containsBodyTag(Response $response)
     {
         return $this->getLastClosingBodyTagPosition($response->getContent()) !== false;
     }
 
-    protected function addCookieConsentScriptToResponse(Response $response): Response
+    /**
+     * @param \Illuminate\Http\Response $response
+     *
+     * @return $this
+     */
+    protected function addCookieConsentScriptToResponse(Response $response)
     {
         $content = $response->getContent();
 
@@ -63,7 +73,7 @@ class CookieConsentMiddleware
      *
      * @return int|bool
      */
-    protected function getLastClosingBodyTagPosition(string $content = '')
+    protected function getLastClosingBodyTagPosition($content = '')
     {
         return strripos($content, '</body>');
     }
