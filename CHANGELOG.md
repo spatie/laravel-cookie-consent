@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-cookie-consent` will be documented in this file
 
+## 1.4.0 - 2016-09-23
+
+- added `Spatie\CookieConsent\CookieConsentMiddleware`
+
 ## 1.3.0 - 2016-09-07
 
 - added Spanish translation
