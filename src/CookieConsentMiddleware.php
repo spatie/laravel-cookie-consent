@@ -28,7 +28,7 @@ class CookieConsentMiddleware
     {
         $response = $next($request);
 
-        if (!$response instanceof Response) {
+        if (! $response instanceof Response) {
             return $response;
         }
 
@@ -51,13 +51,12 @@ class CookieConsentMiddleware
         $closingBodyTagPosition = $this->getLastClosingBodyTagPosition($content);
 
         $content = ''
-            . substr($content, 0, $closingBodyTagPosition)
-            . view('cookieConsent::index')->render()
-            . substr($content, $closingBodyTagPosition);
+            .substr($content, 0, $closingBodyTagPosition)
+            .view('cookieConsent::index')->render()
+            .substr($content, $closingBodyTagPosition);
 
         return $response->setContent($content);
     }
-
 
     /**
      * @param string $content
