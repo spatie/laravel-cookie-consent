@@ -2,7 +2,13 @@
 
 All Notable changes to `laravel-cookie-consent` will be documented in this file
 
+## 1.4.1 - 2016-09-23
+
+- fixed support for PHP 5.6
+
 ## 1.4.0 - 2016-09-23
+
+** this version does not work on PHP 5.6 **
 
 - added `Spatie\CookieConsent\CookieConsentMiddleware`
 
