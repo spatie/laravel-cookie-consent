@@ -67,7 +67,7 @@ return [
 
 ## Usage
 
-To display the dialog all you have to do is include a view in your template
+To display the dialog all you have to do is include this view in your template:
 
 ```php
 //in your blade template
@@ -111,6 +111,26 @@ php artisan vendor:publish --provider="Spatie\CookieConsent\CookieConsentService
 ```
 
 This will copy the `index` and `dialogContents` view files over to `resources/views/vendor/cookieConsent`. You probably only want to modify the `dialogContents` view. If you need to modify the JavaScript code of this package you can do so in the `index` view file.
+
+## Using the middleware
+
+Instead of including `cookieConsent::index` in your view you could opt to add the provided `\Spatie\CookieConsent\CookieConsentMiddleware` to your kernel:
+
+```php
+// app/Http/Kernel.php
+
+class Kernel extends HttpKernel
+{
+    protected $middleware = [
+        // ...
+        \Spatie\CookieConsent\CookieConsentMiddleware::class,
+    ];
+
+    // ...
+}
+```
+
+This will automatically add `cookieConsent::index` to the content of your response right before the closing body tag.
 
 ## Notice
 The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. This package will go a long way towards compliance, but if you want to be 100% sure that your website is ok, you should consult a legal expert.

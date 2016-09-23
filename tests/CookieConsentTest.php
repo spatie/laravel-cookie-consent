@@ -2,10 +2,6 @@
 
 namespace Spatie\CookieConsent\Test;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Spatie\CookieConsent\CookieConsentMiddleware;
-
 class CookieConsentTest extends TestCase
 {
     /** @test */
@@ -43,19 +39,5 @@ class CookieConsentTest extends TestCase
         $html = view('layout')->render();
 
         $this->assertConsentDialogIsNotDisplayed($html);
-    }
-
-    /** @test */
-    public function it_injects_the_view_via_middleware()
-    {
-        $request = new Request();
-
-        $middleware = new CookieConsentMiddleware($this->app);
-
-        $result = $middleware->handle($request, function ($request) {
-            return (new Response())->setContent('<html><head></head><body></body></html>');
-        });
-
-        $this->assertContains('window.laravelCookieConsent', $result->getContent());
     }
 }
