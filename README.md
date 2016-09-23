@@ -114,7 +114,7 @@ This will copy the `index` and `dialogContents` view files over to `resources/vi
 
 ## Using the middleware
 
-Instead of including `cookieConsent::index` in your view you could opt to add the provided `\Spatie\CookieConsent\CookieConsentMiddleware` to your kernel:
+Instead of including `cookieConsent::index` in your view you could opt to add the `Spatie\CookieConsent\CookieConsentMiddleware` to your kernel:
 
 ```php
 // app/Http/Kernel.php
