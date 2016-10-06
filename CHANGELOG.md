@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-cookie-consent` will be documented in this file
 
+## 1.5.0 - 2016-10-06
+
+- added Swedish translation
+
 ## 1.4.1 - 2016-09-23
 
 - fixed support for PHP 5.6
