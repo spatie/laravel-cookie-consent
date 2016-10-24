@@ -6,8 +6,10 @@
 
         window.laravelCookieConsent = (function () {
 
+            var COOKIE_VALUE = 1;
+
             function consentWithCookies() {
-                setCookie('{{ $cookieConsentConfig['cookie_name'] }}', 1, 365 * 20);
+                setCookie('{{ $cookieConsentConfig['cookie_name'] }}', COOKIE_VALUE, 365 * 20);
                 hideCookieDialog();
             }
 
@@ -23,6 +25,14 @@
                 var date = new Date();
                 date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
                 document.cookie = name + '=' + value + '; ' + 'expires=' + date.toUTCString() +';path=/';
+            }
+            
+            function checkCookie(name) {
+                return (document.cookie.split(';').indexOf(name + '=' + COOKIE_VALUE) == 0);
+            }
+
+            if(checkCookie('{{ $cookieConsentConfig['cookie_name'] }}')) {
+                hideCookieDialog();
             }
 
             var buttons = document.getElementsByClassName('js-cookie-consent-agree');
