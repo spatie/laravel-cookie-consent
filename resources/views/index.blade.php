@@ -13,6 +13,10 @@
                 hideCookieDialog();
             }
 
+            function cookieExists(name) {
+                return (document.cookie.split(';').indexOf(name + '=' + COOKIE_VALUE) == 0);
+            }
+
             function hideCookieDialog() {
                 var dialogs = document.getElementsByClassName('js-cookie-consent');
 
@@ -26,12 +30,8 @@
                 date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
                 document.cookie = name + '=' + value + '; ' + 'expires=' + date.toUTCString() +';path=/';
             }
-            
-            function checkCookie(name) {
-                return (document.cookie.split(';').indexOf(name + '=' + COOKIE_VALUE) == 0);
-            }
 
-            if(checkCookie('{{ $cookieConsentConfig['cookie_name'] }}')) {
+            if(cookieExists('{{ $cookieConsentConfig['cookie_name'] }}')) {
                 hideCookieDialog();
             }
 
