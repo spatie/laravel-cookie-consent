@@ -14,7 +14,7 @@
             }
 
             function cookieExists(name) {
-                return (document.cookie.split(';').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
             }
 
             function hideCookieDialog() {
