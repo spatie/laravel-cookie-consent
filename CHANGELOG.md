@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-cookie-consent` will be documented in this file
 
+## 1.6.1 - 2016-10-30
+
+- hide dialog when using back button and consent was already given
+
 ## 1.6.0 - 2016-10-11
 
 - added French translation
