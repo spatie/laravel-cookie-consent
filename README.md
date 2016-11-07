@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/spatie/laravel-cookie-consent/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-cookie-consent)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/a3d7dae9-73fc-4a7d-9b6a-9a252233652c.svg?style=flat-square)](https://insight.sensiolabs.com/projects/a3d7dae9-73fc-4a7d-9b6a-9a252233652c)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-cookie-consent.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-cookie-consent)
-[![StyleCI](https://styleci.io/repos/62055265/shield)](https://styleci.io/repos/62055265)
+[![StyleCI](https://styleci.io/repos/62055265/shield?branch=master)](https://styleci.io/repos/62055265)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 
 All sites owned by EU citizens or targeted towards EU citizens must comply to a crazy EU law. This law requires a dialog to be displayed to inform the users of your websites how cookies are being used. You can read more info on the legislation on [the site of the European Commission](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm#section_2).
