@@ -33,7 +33,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.*",
-        "orchestra/testbench": "3.1",
+        "orchestra/testbench": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev",
+        "orchestra/database": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev",
         "fzaninotto/faker": "~1.4"
     },
     "autoload": {
