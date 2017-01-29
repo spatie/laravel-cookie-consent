@@ -4,6 +4,8 @@
 
     <script>
 
+        document.body.style.marginTop = '50px';
+
         window.laravelCookieConsent = (function () {
 
             var COOKIE_VALUE = 1;
@@ -23,6 +25,8 @@
                 for (var i = 0; i < dialogs.length; ++i) {
                     dialogs[i].style.display = 'none';
                 }
+
+                document.body.style.marginTop = 0;
             }
 
             function setCookie(name, value, expirationInDays) {
