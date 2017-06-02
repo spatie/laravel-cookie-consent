@@ -12,4 +12,8 @@ return [
      * has agreed to accept the conditions.
      */
     'cookie_name' => 'laravel_cookie_consent',
+
+
+    'cookie_policy_url' => url('privacy')
+
 ];
