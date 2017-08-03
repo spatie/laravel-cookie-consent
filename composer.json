@@ -26,15 +26,15 @@
         }
     ],
     "require": {
-        "php" : "^5.6|^7.0",
-        "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
-        "illuminate/view": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
-        "illuminate/cookie": "~5.1.0|~5.2.0|~5.3.0|~5.4.0"
+        "php": "^5.6|^7.0",
+        "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0|~5.5.x-dev|~5.5.x-dev",
+        "illuminate/view": "~5.1.0|~5.2.0|~5.3.0|~5.4.0|~5.5.x-dev|~5.5.x-dev",
+        "illuminate/cookie": "~5.1.0|~5.2.0|~5.3.0|~5.4.0|~5.5.x-dev|~5.5.x-dev"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.*",
-        "orchestra/testbench": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev",
-        "orchestra/database": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev",
+        "phpunit/phpunit": "^6.2",
+        "orchestra/testbench": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev|~3.5.x-dev|~3.5.x-dev",
+        "orchestra/database": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev|~3.5.x-dev|~3.5.x-dev",
         "fzaninotto/faker": "~1.4"
     },
     "autoload": {
@@ -58,3 +58,4 @@
         }
     }
 }
+
