@@ -9,13 +9,10 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 
 class CookieConsentServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     */
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/laravel-cookie-consent.php' => config_path('laravel-cookie-consent.php'),
+            __DIR__.'/../config/cookie-consent.php' => config_path('cookie-consent.php'),
         ], 'config');
 
         $this->publishes([
@@ -28,27 +25,20 @@ class CookieConsentServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cookieConsent');
 
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-cookie-consent.php', 'laravel-cookie-consent');
+        $this->mergeConfigFrom(__DIR__.'/../config/cookie-consent.php', 'cookie-consent');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'cookieConsent');
 
         $this->app->resolving(EncryptCookies::class, function (EncryptCookies $encryptCookies) {
-            $encryptCookies->disableFor(config('laravel-cookie-consent.cookie_name'));
+            $encryptCookies->disableFor(config('cookie-consent.cookie_name'));
         });
 
         $this->app['view']->composer('cookieConsent::index', function (View $view) {
-            $cookieConsentConfig = config('laravel-cookie-consent');
+            $cookieConsentConfig = config('cookie-consent');
 
             $alreadyConsentedWithCookies = Cookie::has($cookieConsentConfig['cookie_name']);
 
             $view->with(compact('alreadyConsentedWithCookies', 'cookieConsentConfig'));
         });
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
     }
 }

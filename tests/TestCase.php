@@ -25,38 +25,22 @@ abstract class TestCase extends OrchestraTestCase
         $app['config']->set('view.paths', [__DIR__.'/stubs/views']);
     }
 
-    /**
-     * @param $key
-     *
-     * @return bool
-     */
-    public function assertTranslationExists($key)
+    public function assertTranslationExists(string $key)
     {
         $this->assertTrue(trans($key) != $key, "Failed to assert that a translation exists for key `{$key}`");
     }
 
-    /**
-     * @param string $html
-     */
-    protected function assertConsentDialogDisplayed($html)
+    protected function assertConsentDialogDisplayed(string $html)
     {
         $this->assertTrue($this->isConsentDialogDisplayed($html), 'Failed to assert that the consent dialog is displayed.');
     }
 
-    /**
-     * @param string $html
-     */
-    protected function assertConsentDialogIsNotDisplayed($html)
+    protected function assertConsentDialogIsNotDisplayed(string $html)
     {
         $this->assertFalse($this->isConsentDialogDisplayed($html), 'Failed to assert that the consent dialog is not being displayed.');
     }
 
-    /**
-     * @param string $html
-     *
-     * @return bool
-     */
-    protected function isConsentDialogDisplayed($html)
+    protected function isConsentDialogDisplayed(string $html): bool
     {
         return str_contains($html, [
             trans('cookieConsent::texts.message'),

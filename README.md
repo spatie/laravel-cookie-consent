@@ -1,12 +1,12 @@
 # Make your Laravel app comply with the crazy EU cookie law
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/cookie-consent)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/spatie/laravel-cookie-consent/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-cookie-consent)
+[![Build Status](https://img.shields.io/travis/spatie/cookie-consent/master.svg?style=flat-square)](https://travis-ci.org/spatie/cookie-consent)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/a3d7dae9-73fc-4a7d-9b6a-9a252233652c.svg?style=flat-square)](https://insight.sensiolabs.com/projects/a3d7dae9-73fc-4a7d-9b6a-9a252233652c)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-cookie-consent.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-cookie-consent)
+[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/cookie-consent.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/cookie-consent)
 [![StyleCI](https://styleci.io/repos/62055265/shield?branch=master)](https://styleci.io/repos/62055265)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/cookie-consent)
 
 All sites owned by EU citizens or targeted towards EU citizens must comply to a crazy EU law. This law requires a dialog to be displayed to inform the users of your websites how cookies are being used. You can read more info on the legislation on [the site of the European Commission](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm#section_2).
 
@@ -16,18 +16,18 @@ Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview 
 
 ## Postcardware
 
-You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it makes it to your production environment you are required to send us a postcard from your hometown, mentioning which of our package(s) you are using.
+You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it makes it to your production environment we highly appreciated you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
 
 Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
 
-The best postcards will get published on the open source page on our website.
+All postcards are published [on our website](https://spatie.be/en/opensource/postcards).
 
 ## Installation
 
 You can install the package via composer:
 
 ``` bash
-composer require spatie/laravel-cookie-consent
+composer require spatie/cookie-consent
 ```
 
 Next up, the service provider must be registered:
@@ -76,7 +76,7 @@ To display the dialog all you have to do is include this view in your template:
 
 This will render the following dialog that, when styled, will look very much like this one.
 
-![dialog](https://spatie.github.io/laravel-cookie-consent/images/dialog.png)
+![dialog](https://spatie.github.io/cookie-consent/images/dialog.png)
  
 Please be aware that the package does not provide any styling, this is something you'll need to do yourself.
 

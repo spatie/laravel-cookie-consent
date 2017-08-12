@@ -1,6 +1,10 @@
 # Changelog
 
-All Notable changes to `laravel-cookie-consent` will be documented in this file
+All notable changes to `cookie-consent` will be documented in this file
+
+## 2.0.0 - 2017-XX-XX
+
+- add support for Laravel 5.5, drop support for older versions of the framework.
 
 ## 1.8.0 - 2017-01-24
 
