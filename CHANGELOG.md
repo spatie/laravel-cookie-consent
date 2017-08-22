@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-cookie-consent` will be documented in this file
 
+## 1.9.0 - 2017-08-22
+
+- add support for secure cookies
+
 ## 1.8.0 - 2017-01-24
 
 - add support for Laravel 5.4
