@@ -41,4 +41,34 @@ class CookieConsentMiddlewareTest extends TestCase
 
         $this->assertEquals('<html></html>', $content);
     }
+
+    /** @test */
+    public function it_uses_a_secure_cookie_if_config_session_is_set_to_secure()
+    {
+        $request = new Request();
+
+        $middleware = new CookieConsentMiddleware($this->app);
+
+        // First test non-secure cookie
+        config(['session.secure' => false]);
+
+        $result = $middleware->handle($request, function ($request) {
+            return (new Response())->setContent('<html><head></head><body></body></html>');
+        });
+
+        $content = $result->getContent();
+
+        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/\';', $content);
+
+        // Now test secure cookie
+        config(['session.secure' => true]);
+
+        $result = $middleware->handle($request, function ($request) {
+            return (new Response())->setContent('<html><head></head><body></body></html>');
+        });
+
+        $content = $result->getContent();
+
+        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $content);
+    }
 }
