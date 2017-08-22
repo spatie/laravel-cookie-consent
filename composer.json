@@ -32,10 +32,10 @@
         "illuminate/cookie": "5.5.x-dev"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.3",
+        "fzaninotto/faker": "~1.4",
         "orchestra/testbench": "3.5.x-dev",
         "orchestra/database": "3.5.x-dev",
-        "fzaninotto/faker": "~1.4"
+        "phpunit/phpunit": "^6.3"
     },
     "autoload": {
         "psr-4": {
@@ -56,5 +56,7 @@
                 "Spatie\\CookieConsent\\CookieConsentServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

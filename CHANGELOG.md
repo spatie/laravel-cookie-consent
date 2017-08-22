@@ -7,6 +7,10 @@ All notable changes to `cookie-consent` will be documented in this file
 - add support for Laravel 5.5, drop support for older versions of the framework.
 - renamed config file from `laravel-cookie-consent` to `cookie-consent`.
 
+## 1.9.0 - 2017-08-22
+
+- add support for secure cookies
+
 ## 1.8.0 - 2017-01-24
 
 - add support for Laravel 5.4

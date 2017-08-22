@@ -28,7 +28,7 @@
             function setCookie(name, value, expirationInDays) {
                 var date = new Date();
                 date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
-                document.cookie = name + '=' + value + '; ' + 'expires=' + date.toUTCString() +';path=/';
+                document.cookie = name + '=' + value + '; ' + 'expires=' + date.toUTCString() +';path=/{{ config('session.secure') ? ';secure' : null }}';
             }
 
             if(cookieExists('{{ $cookieConsentConfig['cookie_name'] }}')) {
