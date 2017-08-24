@@ -1,4 +1,6 @@
-<?php return '<html><head></head><body><div class="js-cookie-consent cookie-consent">
+<?php
+
+return '<html><head></head><body><div class="js-cookie-consent cookie-consent">
 
     <span class="cookie-consent__message">
         Your experience on this site will be improved by allowing cookies.
