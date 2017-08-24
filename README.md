@@ -30,16 +30,7 @@ You can install the package via composer:
 composer require spatie/cookie-consent
 ```
 
-Next up, the service provider must be registered:
-
-```php
-// config/app.php
-'providers' => [
-    ...
-    Spatie\CookieConsent\CookieConsentServiceProvider::class,
-
-];
-```
+The package will automatically register itself.
 
 Optionally you can publish the config-file:
 
