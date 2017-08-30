@@ -1,12 +1,12 @@
 # Make your Laravel app comply with the crazy EU cookie law
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/cookie-consent)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/spatie/cookie-consent/master.svg?style=flat-square)](https://travis-ci.org/spatie/cookie-consent)
+[![Build Status](https://img.shields.io/travis/spatie/laravel-cookie-consent/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-cookie-consent)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/a3d7dae9-73fc-4a7d-9b6a-9a252233652c.svg?style=flat-square)](https://insight.sensiolabs.com/projects/a3d7dae9-73fc-4a7d-9b6a-9a252233652c)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/cookie-consent.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/cookie-consent)
+[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-cookie-consent.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-cookie-consent)
 [![StyleCI](https://styleci.io/repos/62055265/shield?branch=master)](https://styleci.io/repos/62055265)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/cookie-consent)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 
 All sites owned by EU citizens or targeted towards EU citizens must comply to a crazy EU law. This law requires a dialog to be displayed to inform the users of your websites how cookies are being used. You can read more info on the legislation on [the site of the European Commission](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm#section_2).
 
