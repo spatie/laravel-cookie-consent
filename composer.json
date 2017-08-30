@@ -27,14 +27,13 @@
     ],
     "require": {
         "php" : "^7.0",
-        "illuminate/support": "5.5.x-dev",
-        "illuminate/view": "5.5.x-dev",
-        "illuminate/cookie": "5.5.x-dev"
+        "illuminate/support": "~5.5.0",
+        "illuminate/view": "~5.5.0",
+        "illuminate/cookie": "~5.5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
-        "orchestra/testbench": "3.5.x-dev",
-        "orchestra/database": "3.5.x-dev",
+        "orchestra/testbench": "~3.5.0",
         "phpunit/phpunit": "^6.3"
     },
     "autoload": {
