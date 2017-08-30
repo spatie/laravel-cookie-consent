@@ -5,7 +5,6 @@ namespace Spatie\CookieConsent\Test;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Spatie\CookieConsent\CookieConsentMiddleware;
-use Spatie\Snapshots\MatchesSnapshots;
 
 class CookieConsentMiddlewareTest extends TestCase
 {
