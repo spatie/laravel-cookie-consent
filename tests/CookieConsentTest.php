@@ -22,7 +22,7 @@ class CookieConsentTest extends TestCase
     /** @test */
     public function it_will_not_show_the_cookie_consent_view_when_the_package_is_disabled()
     {
-        $this->app['config']->set('laravel-cookie-consent.enabled', false);
+        $this->app['config']->set('cookie-consent.enabled', false);
 
         $html = view('layout')->render();
 
@@ -32,9 +32,9 @@ class CookieConsentTest extends TestCase
     /** @test */
     public function it_will_not_show_the_cookie_consent_view_when_the_user_has_already_consented()
     {
-        $this->app['config']->set('laravel-cookie-consent.enabled', false);
+        $this->app['config']->set('cookie-consent.enabled', false);
 
-        cookie(config('laravel-cookie-consent.cookie_name'), 1);
+        cookie(config('cookie-consent.cookie_name'), 1);
 
         $html = view('layout')->render();
 

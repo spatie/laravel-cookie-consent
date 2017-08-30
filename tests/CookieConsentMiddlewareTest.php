@@ -43,32 +43,30 @@ class CookieConsentMiddlewareTest extends TestCase
     }
 
     /** @test */
-    public function it_uses_a_secure_cookie_if_config_session_is_set_to_secure()
+    public function it_does_not_use_a_sucre_cookie_if_session_secure_is_false()
     {
-        $request = new Request();
+        config(['session.secure' => false]);
 
         $middleware = new CookieConsentMiddleware($this->app);
 
-        // First test non-secure cookie
-        config(['session.secure' => false]);
-
-        $result = $middleware->handle($request, function ($request) {
+        $result = $middleware->handle(new Request(), function () {
             return (new Response())->setContent('<html><head></head><body></body></html>');
         });
 
-        $content = $result->getContent();
+        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/\';', $result->getContent());
+    }
 
-        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/\';', $content);
-
-        // Now test secure cookie
+    /** @test */
+    public function it_uses_a_secure_cookie_if_config_session_is_set_to_secure()
+    {
         config(['session.secure' => true]);
 
-        $result = $middleware->handle($request, function ($request) {
+        $middleware = new CookieConsentMiddleware($this->app);
+
+        $result = $middleware->handle(new Request(), function () {
             return (new Response())->setContent('<html><head></head><body></body></html>');
         });
 
-        $content = $result->getContent();
-
-        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $content);
+        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $result->getContent());
     }
 }

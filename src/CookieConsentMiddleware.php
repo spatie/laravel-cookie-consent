@@ -16,14 +16,6 @@ class CookieConsentMiddleware
         $this->app = $app;
     }
 
-    /**
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
-     *
-     * @return mixed
-     *
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
-     */
     public function handle($request, Closure $next)
     {
         $response = $next($request);
@@ -39,12 +31,7 @@ class CookieConsentMiddleware
         return $this->addCookieConsentScriptToResponse($response);
     }
 
-    /**
-     * @param \Illuminate\Http\Response $response
-     *
-     * @return bool
-     */
-    protected function containsBodyTag(Response $response)
+    protected function containsBodyTag(Response $response): bool
     {
         return $this->getLastClosingBodyTagPosition($response->getContent()) !== false;
     }
@@ -68,12 +55,7 @@ class CookieConsentMiddleware
         return $response->setContent($content);
     }
 
-    /**
-     * @param string $content
-     *
-     * @return int|bool
-     */
-    protected function getLastClosingBodyTagPosition($content = '')
+    protected function getLastClosingBodyTagPosition(string $content = '')
     {
         return strripos($content, '</body>');
     }
