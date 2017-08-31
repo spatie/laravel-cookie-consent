@@ -27,7 +27,7 @@ All postcards are published [on our website](https://spatie.be/en/opensource/pos
 You can install the package via composer:
 
 ``` bash
-composer require spatie/cookie-consent
+composer require spatie/laravel-cookie-consent
 ```
 
 The package will automatically register itself.
