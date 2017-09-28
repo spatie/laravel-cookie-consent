@@ -67,7 +67,7 @@ To display the dialog all you have to do is include this view in your template:
 
 This will render the following dialog that, when styled, will look very much like this one.
 
-![dialog](https://spatie.github.io/cookie-consent/images/dialog.png)
+![dialog](https://raw.githubusercontent.com/spatie/laravel-cookie-consent/gh-pages/images/dialog.png)
  
 Please be aware that the package does not provide any styling, this is something you'll need to do yourself.
 
