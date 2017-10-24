@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.1.0 - 2017-10-24
+
+- add Greek translation
+
 ## 2.0.0 - 2017-08-30
 
 - add support for Laravel 5.5, drop support for older versions of the framework.
@@ -17,7 +21,7 @@ All notable changes to `cookie-consent` will be documented in this file
 
 ## 1.7.0 - 2016-11-07
 
-- added Dutch translation
+- add Dutch translation
 
 ## 1.6.1 - 2016-10-30
 
