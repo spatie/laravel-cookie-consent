@@ -8,11 +8,11 @@
 [![StyleCI](https://styleci.io/repos/62055265/shield?branch=master)](https://styleci.io/repos/62055265)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 
-All sites owned by EU citizens or targeted towards EU citizens must comply to a crazy EU law. This law requires a dialog to be displayed to inform the users of your websites how cookies are being used. You can read more info on the legislation on [the site of the European Commission](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm#section_2).
+All sites owned by EU citizens or targeted towards EU citizens must comply with a crazy EU law. This law requires a dialog to be displayed to inform the users of your websites how cookies are being used. You can read more info on the legislation on [the site of the European Commission](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm#section_2).
 
 This package provides an easily configurable view to display the message. Also included is JavaScript code to set a cookie when a user agrees with the cookie policy. The package will not display the dialog when that cookie has been set.
 
-Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
+Spatie is a web design agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
 ## Installation
 
@@ -63,7 +63,7 @@ This will render the following dialog that, when styled, will look very much lik
  
 Please be aware that the package does not provide any styling, this is something you'll need to do yourself.
 
-When the user clicks "Allow cookies" a `laravel_cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request Laravel will notice that the `laravel_cookie_consent` has been set and will not display the dialog again
+When the user clicks "Allow cookies" a `laravel_cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request, Laravel will notice that the `laravel_cookie_consent` has been set and will not display the dialog again
 
 ## Customising the dialog texts
 
@@ -83,7 +83,7 @@ This will publish this file to `resources/lang/vendor/cookieConsent/en/texts.php
  ];
  ```
  
- If you want to translate the values to for example french, just copy that file over to `resources/lang/vendor/cookieConsent/fr/texts.php` and fill in the French translations.
+ If you want to translate the values to, for example, French, just copy that file over to `resources/lang/vendor/cookieConsent/fr/texts.php` and fill in the French translations.
  
 ### Customising the dialog contents
 
@@ -135,7 +135,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security-related issues, please email freek@spatie.be instead of using the issue tracker.
 
 ## Postcardware
 
@@ -153,7 +153,7 @@ We publish all received postcards [on our company website](https://spatie.be/en/
 
 ## Support us
 
-Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
+Spatie is a web design agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
 Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
 All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
