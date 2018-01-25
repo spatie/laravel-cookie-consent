@@ -5,10 +5,9 @@
 <table>
    <tr>
       <td><img src="http://spatie.github.io/laravel-permission/sponsor-logo.png"></td>
-      <td>If you want to quickly add secure token-based authentication to Laravel projects, feel free to check Auth0's Laravel SDK and free plan at <a href="https://auth0.com/overview">https://auth0.com/overview?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=laravel-cookie-consent&utm_content=auth</a>.</td>
+      <td>If you want to quickly add secure token-based authentication to Laravel projects, feel free to check Auth0's Laravel SDK and free plan at <a href="https://auth0.com/overview?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=laravel-cookie-consent&utm_content=auth">https://auth0.com/overview</a>.</td>
    </tr>
 </table>
-
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
