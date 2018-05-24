@@ -43,7 +43,7 @@ class CookieConsentMiddlewareTest extends TestCase
     }
 
     /** @test */
-    public function it_does_not_use_a_sucre_cookie_if_session_secure_is_false()
+    public function it_does_not_use_a_secure_cookie_if_session_secure_is_false()
     {
         config(['session.secure' => false]);
 
