@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.2.2 - 2018-02-28
+
+- add `cookie_lifetime` to config
+
 ## 2.2.1 - 2018-02-08
 
 - add support for Laravel 5.6
