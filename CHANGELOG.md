@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.3.0 - 2018-06-09
+
+- add estonian and russian translation
+
 ## 2.2.2 - 2018-02-28
 
 - add `cookie_lifetime` to config
