@@ -54,6 +54,7 @@ class CookieConsentMiddlewareTest extends TestCase
         });
 
         $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/\';', $result->getContent());
+        $this->assertNotContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $result->getContent());
     }
 
     /** @test */
