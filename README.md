@@ -128,9 +128,31 @@ class Kernel extends HttpKernel
 
 This will automatically add `cookieConsent::index` to the content of your response right before the closing body tag.
 
-## Notice
-The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. This package will go a long way towards compliance, but if you want to be 100% sure that your website is ok, you should consult a legal expert.
+## Optional: remove all cookies without consent
 
+If you want to force your app to not set any cookies at all – even the ones used by sessions and CSRF protections – this is easy to do. Just add the `Spatie\CookieConsent\RemoveCookiesWithoutConsentMiddleware` to your kernel, at the very top of the list:
+
+```php
+// app/Http/Kernel.php
+
+class Kernel extends HttpKernel
+{
+    protected $middleware = [
+        \Spatie\CookieConsent\RemoveCookiesWithoutConsentMiddleware::class,
+        // ...
+    ];
+
+    // ...
+}
+```
+
+This will simply remove all cookies from the response, without any further interaction from you, so long as `enabled` is `true` in your config, and the user hasn't (yet) consented to cookies being set.
+
+> Note: This does have some potential drawbacks you should take into account. Specifically, sessions will not work without being able to set a cookie on the response, to track which session is which. This in turn means forms will also fail to submit, as there is no way to look up the correct CSRF token without a session to store it in. You can work around this by adding a `window.location.reload()` to the `consentWithCookies()` function in the `index` view file, to get a session cookie you can use. Alternately, if you want session cookies to still be set, you can place this middleware after `Illuminate\Session\Middleware\StartSession`, so that the session cookies are added to the request after `RemoveCookiesWithoutConsentMiddleware` has already returned.
+
+## Notice
+
+The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. This package will go a long way towards compliance, but if you want to be 100% sure that your website is ok, you should consult a legal expert.
 
 ## Changelog
 
