@@ -2,6 +2,11 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.4.1 - 2018-08-28
+
+- add support for Laravel 5.7
+- use `const` and `let` instead of `var`
+
 ## 2.4.0 - 2018-06-22
 
 - add turkish translations
