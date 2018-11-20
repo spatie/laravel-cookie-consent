@@ -13,7 +13,7 @@ class CookieConsentMiddlewareTest extends TestCase
     {
         $request = new Request();
 
-        $middleware = new CookieConsentMiddleware($this->app);
+        $middleware = new CookieConsentMiddleware();
 
         $result = $middleware->handle($request, function ($request) {
             return (new Response())->setContent('<html><head></head><body></body></html>');
@@ -31,7 +31,7 @@ class CookieConsentMiddlewareTest extends TestCase
     {
         $request = new Request();
 
-        $middleware = new CookieConsentMiddleware($this->app);
+        $middleware = new CookieConsentMiddleware();
 
         $result = $middleware->handle($request, function ($request) {
             return (new Response())->setContent('<html></html>');
@@ -47,7 +47,7 @@ class CookieConsentMiddlewareTest extends TestCase
     {
         config(['session.secure' => false]);
 
-        $middleware = new CookieConsentMiddleware($this->app);
+        $middleware = new CookieConsentMiddleware();
 
         $result = $middleware->handle(new Request(), function () {
             return (new Response())->setContent('<html><head></head><body></body></html>');
@@ -62,7 +62,7 @@ class CookieConsentMiddlewareTest extends TestCase
     {
         config(['session.secure' => true]);
 
-        $middleware = new CookieConsentMiddleware($this->app);
+        $middleware = new CookieConsentMiddleware();
 
         $result = $middleware->handle(new Request(), function () {
             return (new Response())->setContent('<html><head></head><body></body></html>');
