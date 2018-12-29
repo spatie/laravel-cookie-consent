@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.6.0 - 2018-12-29
+
+- add norwegian translations
+
 ## 2.5.0 - 2018-06-22
 
 - add polish translations
