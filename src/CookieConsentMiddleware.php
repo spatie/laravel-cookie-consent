@@ -11,6 +11,10 @@ class CookieConsentMiddleware
     {
         $response = $next($request);
 
+        if (! config('cookie-consent.enabled')) {
+            return $response;
+        }
+
         if (! $response instanceof Response) {
             return $response;
         }
