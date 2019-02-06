@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.6.2 - 2019-02-06
+
+- add hungarian translations
+
 ## 2.6.1 - 2019-01-14
 
 - do not use middleware when the package is disabled
