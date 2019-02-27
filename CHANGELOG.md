@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.7.0 - 2019-02-27
+
+- drop support for PHP 7.1
+
 ## 2.6.3 - 2019-02-27
 
 - add support for Laravel 5.8
