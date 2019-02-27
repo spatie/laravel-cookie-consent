@@ -21,9 +21,9 @@ class CookieConsentMiddlewareTest extends TestCase
 
         $content = $result->getContent();
 
-        $this->assertContains('<html><head></head><body>', $content);
-        $this->assertContains('window.laravelCookieConsent', $content);
-        $this->assertContains('</body></html>', $content);
+        $this->assertStringContainsString('<html><head></head><body>', $content);
+        $this->assertStringContainsString('window.laravelCookieConsent', $content);
+        $this->assertStringContainsString('</body></html>', $content);
     }
 
     /** @test */
@@ -53,8 +53,8 @@ class CookieConsentMiddlewareTest extends TestCase
             return (new Response())->setContent('<html><head></head><body></body></html>');
         });
 
-        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/\';', $result->getContent());
-        $this->assertNotContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $result->getContent());
+        $this->assertStringContainsString('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/\';', $result->getContent());
+        $this->assertStringNotContainsString('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $result->getContent());
     }
 
     /** @test */
@@ -68,6 +68,6 @@ class CookieConsentMiddlewareTest extends TestCase
             return (new Response())->setContent('<html><head></head><body></body></html>');
         });
 
-        $this->assertContains('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $result->getContent());
+        $this->assertStringContainsString('document.cookie = name + \'=\' + value + \'; \' + \'expires=\' + date.toUTCString() +\';path=/;secure\';', $result->getContent());
     }
 }
