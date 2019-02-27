@@ -2,6 +2,8 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.6.3 - 2019-02
+
 ## 2.6.2 - 2019-02-06
 
 - add hungarian translations
