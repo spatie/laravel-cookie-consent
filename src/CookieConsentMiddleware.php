@@ -19,6 +19,10 @@ class CookieConsentMiddleware
             return $response;
         }
 
+        if ($this->excluded($request)) {
+            return $response;
+        }
+
         if (! $this->containsBodyTag($response)) {
             return $response;
         }
@@ -26,6 +30,17 @@ class CookieConsentMiddleware
         return $this->addCookieConsentScriptToResponse($response);
     }
 
+    /**
+     * Excluded routes
+     *
+     * @param $request
+     * @return bool
+     */
+    protected function excluded($request): bool
+    {
+        return in_array($request->route()->getName(),config('cookie-consent.excluded'));
+    }
+    
     protected function containsBodyTag(Response $response): bool
     {
         return $this->getLastClosingBodyTagPosition($response->getContent()) !== false;
