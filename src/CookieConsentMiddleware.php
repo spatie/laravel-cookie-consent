@@ -38,7 +38,7 @@ class CookieConsentMiddleware
      */
     protected function excluded($request): bool
     {
-        return in_array($request->route()->getName(), config('cookie-consent.excluded' ?: []));
+        return in_array($request->route()->getName(), config('cookie-consent.excluded') ?: []);
     }
     
     protected function containsBodyTag(Response $response): bool
