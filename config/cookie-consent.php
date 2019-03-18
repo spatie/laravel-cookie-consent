@@ -17,12 +17,11 @@ return [
      * Set the cookie duration in days.  Default is 365 * 20.
      */
     'cookie_lifetime' => 365 * 20,
-    
-    
+
     /*
      * Excluded routes
      * */
     'excluded' => [
         //'excluded-route-name',
-    ]
+    ],
 ];
