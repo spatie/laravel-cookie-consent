@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.8.0 - 2019-03-29
+
+- add support for subdomain cookies
+
 ## 2.7.0 - 2019-02-27
 
 - drop support for PHP 7.1
