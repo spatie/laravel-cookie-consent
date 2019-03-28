@@ -72,7 +72,7 @@ class CookieConsentMiddlewareTest extends TestCase
         $this->assertStringContainsString(';path=/;secure\';', $result->getContent());
     }
 
-    /** @test the cookie domain is set by the session.domain config variable */
+    /** @test */
     public function the_cookie_domain_is_set_by_the_session_domain_config_variable()
     {
         config(['session.domain' => 'some domain']);
@@ -86,7 +86,7 @@ class CookieConsentMiddlewareTest extends TestCase
         $this->assertStringContainsString('const COOKIE_DOMAIN = \'some domain\'', $result->getContent());
     }
 
-    /** @test it uses the request host unless session.domain is set */
+    /** @test */
     public function it_uses_the_request_host_unless_session_domain_is_set()
     {
         config(['session.domain' => null]);
