@@ -42,7 +42,7 @@ abstract class TestCase extends OrchestraTestCase
 
     protected function isConsentDialogDisplayed(string $html): bool
     {
-        return str_contains($html, [
+        return \Illuminate\Support\Str::contains($html, [
             trans('cookieConsent::texts.message'),
             trans('cookieConsent::texts.button_text'),
         ]);
