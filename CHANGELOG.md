@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.9.0 - 2019-09-04
+
+- make compatible with Laravel 6
+
 ## 2.8.0 - 2019-03-29
 
 - add support for subdomain cookies
