@@ -3,4 +3,5 @@
 return [
     'message' => 'Twoje doświadczenia na tej witrynie będą lepsze dzięki cookies.',
     'agree' => 'Zezwalaj na cookie',
+    'disagree' => 'Nie zezwalam na pliki cookie',
 ];
