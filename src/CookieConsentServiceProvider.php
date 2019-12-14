@@ -4,8 +4,8 @@ namespace Spatie\CookieConsent;
 
 use Cookie;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Support\ServiceProvider;
 
 class CookieConsentServiceProvider extends ServiceProvider
 {
