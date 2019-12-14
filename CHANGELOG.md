@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.11.0 - 2019-12-14
+
+- add Danish texts
+
 ## 2.10.0 - 2019-10-02
 
 - add Czech translation (#102)
