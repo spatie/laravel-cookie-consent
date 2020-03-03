@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.0 - 2020-03-03
+
+- add support for Laravel 7
+
 ## 2.11.0 - 2019-12-14
 
 - add Danish texts
