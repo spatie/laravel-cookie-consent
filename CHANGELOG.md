@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.1 - 2020-03-30
+
+- add esperanto translations
+
 ## 2.12.0 - 2020-03-03
 
 - add support for Laravel 7
