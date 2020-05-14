@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.4 - 2020-05-13
+
+- add romanian
+
 ## 2.12.3 - 2020-04-27
 
 - add italian (#114)
