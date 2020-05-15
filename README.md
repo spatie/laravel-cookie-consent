@@ -62,7 +62,7 @@ return [
 
 To display the dialog all you have to do is include this view in your template:
 
-```php
+```blade
 //in your blade template
 @include('cookieConsent::index')
 ```
