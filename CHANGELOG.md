@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.5 - 2020-06-08
+
+- use `session.same_site` to set the Cookie's `SameSite` attribute (#119)
+
 ## 2.12.4 - 2020-05-13
 
 - add romanian
