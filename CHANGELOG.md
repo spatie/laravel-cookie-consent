@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.7 - 2020-08-24
+
+- fix arabic
+
 ## 2.12.6 - 2020-08-24
 
 - add arabic
