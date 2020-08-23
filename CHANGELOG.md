@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.8 - 2020-08-24
+
+- add Indonesia translation (#127)
+
 ## 2.12.7 - 2020-08-24
 
 - fix arabic
