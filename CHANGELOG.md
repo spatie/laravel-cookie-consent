@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.9 - 2020-09-09
+
+- Support Laravel 8
+
 ## 2.12.8 - 2020-08-24
 
 - add Indonesia translation (#127)
