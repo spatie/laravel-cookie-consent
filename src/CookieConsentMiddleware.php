@@ -3,7 +3,9 @@
 namespace Spatie\CookieConsent;
 
 use Closure;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Collection;
 
 class CookieConsentMiddleware
 {
@@ -12,6 +14,10 @@ class CookieConsentMiddleware
         $response = $next($request);
 
         if (! config('cookie-consent.enabled')) {
+            return $response;
+        }
+
+        if ($this->isRequestUriExempt($request)) {
             return $response;
         }
 
@@ -53,5 +59,25 @@ class CookieConsentMiddleware
     protected function getLastClosingBodyTagPosition(string $content = '')
     {
         return strripos($content, '</body>');
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return bool
+     */
+    protected function isRequestUriExempt($request)
+    {
+        $exemptUris = collect(config('cookie-consent.except') ?: []);
+
+        $exemptUris->each(function($uri) use($exemptUris) {
+            if(str_contains($uri, '/*')) {
+                $exemptUris->push(str_replace('/*', '', $uri));
+            }
+        });
+
+        $exemptUris = $exemptUris->map(fn($uri) => trim($uri, "\/ \t\n\r\0\x0B"));
+
+        return $request->is($exemptUris->toArray());
     }
 }

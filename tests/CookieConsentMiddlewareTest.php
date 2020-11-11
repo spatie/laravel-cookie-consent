@@ -127,4 +127,50 @@ class CookieConsentMiddlewareTest extends TestCase
 
         $this->assertStringContainsString('const COOKIE_DOMAIN = \'localhost\'', $result->getContent());
     }
+
+    /** @test */
+    public function it_doesnt_show_the_cookie_consent_box_when_hitting_a_uri_in_the_except_list()
+    {
+        config(['cookie-consent.except' => ['/no-cookie-consent']]);
+
+        $middleware = new CookieConsentMiddleware();
+        $request = new Request([],[],[],[],[],['REQUEST_URI' => 'https://spatie.be/no-cookie-consent']);
+
+        $result = $middleware->handle($request, function () {
+            return (new Response())->setContent('<html><head></head><body></body></html>');
+        });
+
+        $this->assertStringNotContainsString('window.laravelCookieConsent', $result->getContent());
+
+        // Check a normal page outside of the except array
+        $normalPage = $middleware->handle(new Request(), function () {
+            return (new Response())->setContent('<html><head></head><body></body></html>');
+        });
+
+        $this->assertStringContainsString('window.laravelCookieConsent', $normalPage->getContent());
+    }
+
+    /** @test */
+    public function it_matches_wildcard_routes_in_the_except_array()
+    {
+        config(['cookie-consent.except' => ['/no-cookie-consent/*']]);
+
+        $middleware = new CookieConsentMiddleware();
+
+        $requestUris = [
+          '/no-cookie-consent',
+          '/no-cookie-consent/foo',
+          '/no-cookie-consent/foo/bar',
+        ];
+
+        foreach($requestUris as $uri) {
+            $request = new Request([],[],[],[],[],['REQUEST_URI' => "https://spatie.be{$uri}"]);
+
+            $result = $middleware->handle($request, function () {
+                return (new Response())->setContent('<html><head></head><body></body></html>');
+            });
+
+            $this->assertStringNotContainsString('window.laravelCookieConsent', $result->getContent());
+        }
+    }
 }

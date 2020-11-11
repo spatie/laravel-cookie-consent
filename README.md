@@ -46,6 +46,14 @@ return [
     'enabled' => env('COOKIE_CONSENT_ENABLED', true),
 
     /*
+     * Any URLs that should not display the cookie consent banner.
+     * Wildcards can be used
+     * 
+     * For example: ['admin/*']
+     */
+    'except' => [],
+
+    /*
      * The name of the cookie in which we store if the user
      * has agreed to accept the conditions.
      */
@@ -101,9 +109,21 @@ If you need full control over the contents of the dialog. You can publish the vi
 
 ```bash
 php artisan vendor:publish --provider="Spatie\CookieConsent\CookieConsentServiceProvider" --tag="views"
-```
+``` 
 
 This will copy the `index` and `dialogContents` view files over to `resources/views/vendor/cookieConsent`. You probably only want to modify the `dialogContents` view. If you need to modify the JavaScript code of this package you can do so in the `index` view file.
+
+### Preventing some routes from displaying the dialog
+
+If there are some routes you don't need the dialog displaying on you can use the `except` key in the config file.
+
+Any paths placed in this array will be excluded when displaying the dialog.
+
+```php
+'except' => [
+    'admin/*',
+],
+```
 
 ## Using the middleware
 
