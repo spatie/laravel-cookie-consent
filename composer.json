@@ -32,7 +32,7 @@
         "illuminate/cookie": "^6.0|^7.0|^8.0"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.9",
+        "fakerphp/faker": "~1.9",
         "orchestra/testbench": "^4.0|^5.0|^6.0"
     },
     "autoload": {
