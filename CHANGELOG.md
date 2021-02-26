@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 2.12.13 - 2021-02-26
+
+- add Vietnamese
+
 ## 2.12.12 - 2021-01-29
 
 - add Macedonian translation (#139)
