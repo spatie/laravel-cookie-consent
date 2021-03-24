@@ -45,7 +45,7 @@ class CookieConsentMiddleware
         return $response->setContent($content);
     }
 
-    protected function getLastClosingBodyTagPosition(string $content = ''): bool|int
+    protected function getLastClosingBodyTagPosition(string $content = ''): bool | int
     {
         return strripos($content, '</body>');
     }

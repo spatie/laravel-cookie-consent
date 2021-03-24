@@ -5,8 +5,8 @@ namespace Spatie\CookieConsent;
 use Illuminate\Contracts\View\View;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Support\Facades\Cookie;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class CookieConsentServiceProvider extends PackageServiceProvider
 {
