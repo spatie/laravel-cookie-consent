@@ -2,6 +2,13 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.0.0 - unreleased
+
+- require PHP 8.0+
+- drop support for PHP 7.x
+- convert syntax to PHP 8 where appropriate
+- implement spatie/laravel-package-tools
+
 ## 2.12.13 - 2021-02-26
 
 - add Vietnamese
