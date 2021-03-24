@@ -2,43 +2,34 @@
 
 namespace Spatie\CookieConsent;
 
-use Cookie;
 use Illuminate\Contracts\View\View;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Cookie;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Spatie\LaravelPackageTools\Package;
 
-class CookieConsentServiceProvider extends ServiceProvider
+class CookieConsentServiceProvider extends PackageServiceProvider
 {
-    public function boot()
+    public function configurePackage(Package $package): void
     {
-        $this->publishes([
-            __DIR__.'/../config/cookie-consent.php' => config_path('cookie-consent.php'),
-        ], 'config');
+        $package
+            ->name('laravel-cookie-consent')
+            ->hasConfigFile()
+            ->hasViews()
+            ->hasTranslations()
+            ->hasViewComposer('cookie-consent::index', function (View $view) {
+                $cookieConsentConfig = config('cookie-consent');
 
-        $this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/cookieConsent'),
-        ], 'views');
+                $alreadyConsentedWithCookies = Cookie::has($cookieConsentConfig['cookie_name']);
 
-        $this->publishes([
-            __DIR__.'/../resources/lang' => base_path('resources/lang/vendor/cookieConsent'),
-        ], 'lang');
+                $view->with(compact('alreadyConsentedWithCookies', 'cookieConsentConfig'));
+            });
+    }
 
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cookieConsent');
-
-        $this->mergeConfigFrom(__DIR__.'/../config/cookie-consent.php', 'cookie-consent');
-
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'cookieConsent');
-
+    public function packageBooted(): void
+    {
         $this->app->resolving(EncryptCookies::class, function (EncryptCookies $encryptCookies) {
             $encryptCookies->disableFor(config('cookie-consent.cookie_name'));
-        });
-
-        $this->app['view']->composer('cookieConsent::index', function (View $view) {
-            $cookieConsentConfig = config('cookie-consent');
-
-            $alreadyConsentedWithCookies = Cookie::has($cookieConsentConfig['cookie_name']);
-
-            $view->with(compact('alreadyConsentedWithCookies', 'cookieConsentConfig'));
         });
     }
 }
