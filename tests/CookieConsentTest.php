@@ -7,8 +7,8 @@ class CookieConsentTest extends TestCase
     /** @test */
     public function it_provides_translations()
     {
-        $this->assertTranslationExists('cookieConsent::texts.message');
-        $this->assertTranslationExists('cookieConsent::texts.agree');
+        $this->assertTranslationExists('cookie-consent::texts.message');
+        $this->assertTranslationExists('cookie-consent::texts.agree');
     }
 
     /** @test */
