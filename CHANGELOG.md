@@ -2,7 +2,7 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
-## 3.0.0 - unreleased
+## 3.0.0 - 2021-03-26
 
 - require PHP 8.0+
 - drop support for PHP 7.x
