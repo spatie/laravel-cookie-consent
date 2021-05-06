@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.0.1 - 2021-05-06
+
+- update norwegian
+
 ## 3.0.0 - 2021-03-26
 
 - require PHP 8.0+
