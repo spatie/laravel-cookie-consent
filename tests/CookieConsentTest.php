@@ -38,4 +38,14 @@ class CookieConsentTest extends TestCase
 
         $this->assertConsentDialogIsNotDisplayed($html);
     }
+
+    /** @test */
+    public function it_contains_the_necessary_css_classes_for_javascript_functionality()
+    {
+        $html = view('dialog')->render();
+
+        $this->assertStringContainsString('js-cookie-consent', $html);
+        $this->assertStringContainsString('js-cookie-consent-agree', $html);
+    }
+
 }

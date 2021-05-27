@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.1.0 - unreleased
+
+- use TailwindCSS styling by default (#158)
+
 ## 3.0.1 - 2021-05-06
 
 - update norwegian
