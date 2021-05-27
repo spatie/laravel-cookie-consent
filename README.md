@@ -64,7 +64,7 @@ To display the dialog all you have to do is include this view in your template:
 
 ```blade
 //in your blade template
-@include('cookie-consent::index')
+@include('cookieConsent::index')
 ```
 
 This will render the following dialog that, when styled, will look very much like this one.
