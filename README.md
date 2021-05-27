@@ -70,8 +70,8 @@ To display the dialog all you have to do is include this view in your template:
 This will render the following dialog that, when styled, will look very much like this one.
 
 ![dialog](https://spatie.github.io/laravel-cookie-consent/images/dialog.png)
- 
-Please be aware that the package does not provide any styling, this is something you'll need to do yourself.
+
+The default styling provided by this package uses TailwindCSS v2 to provide a floating banner at the bottom of the page.
 
 When the user clicks "Allow cookies" a `laravel_cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request, Laravel will notice that the `laravel_cookie_consent` has been set and will not display the dialog again
 
