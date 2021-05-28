@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.1.1 - 2021-05-28
+
+- added bengali translation (#160)
+
 ## 3.1.0 - 2021-05-27
 
 - use TailwindCSS styling by default (#158)
