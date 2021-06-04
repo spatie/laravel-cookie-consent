@@ -47,5 +47,4 @@ class CookieConsentTest extends TestCase
         $this->assertStringContainsString('js-cookie-consent', $html);
         $this->assertStringContainsString('js-cookie-consent-agree', $html);
     }
-
 }
