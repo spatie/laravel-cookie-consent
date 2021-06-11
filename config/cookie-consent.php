@@ -8,7 +8,7 @@ return [
     'enabled' => env('COOKIE_CONSENT_ENABLED', true),
 
     /*
-     * Use this setting to add a refuse button ont the dialog.
+     * Use this setting to add a refuse button on the dialog.
     */
     'refuse_enabled' => env('COOKIE_CONSENT_REFUSE_ENABLED', false),
 

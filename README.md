@@ -44,6 +44,11 @@ return [
      * Use this setting to enable the cookie consent dialog.
      */
     'enabled' => env('COOKIE_CONSENT_ENABLED', true),
+    
+    /*
+     * Use this setting to add a refuse button on the dialog.
+    */
+    'refuse_enabled' => env('COOKIE_CONSENT_REFUSE_ENABLED', false),
 
     /*
      * The name of the cookie in which we store if the user
@@ -75,6 +80,10 @@ The default styling provided by this package uses TailwindCSS v2 to provide a fl
 
 When the user clicks "Allow cookies" a `laravel_cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request, Laravel will notice that the `laravel_cookie_consent` has been set and will not display the dialog again
 
+## Refuse button
+
+If you want to add a refuse button to the dialog, you can enable the option in the config file. When the user clicks "Refuse non-essential cookies" a `laravel_cookie_consent` cookie will be set with the value of `0`
+
 ## Customising the dialog texts
 
 If you want to modify the text shown in the dialog you can publish the lang-files with this command:
@@ -90,6 +99,7 @@ This will publish this file to `resources/lang/vendor/cookie-consent/en/texts.ph
  return [
      'message' => 'Please be informed that this site uses cookies.',
      'agree' => 'Allow cookies',
+     'refuse' => 'Refuse non-essential cookies',
  ];
  ```
  
