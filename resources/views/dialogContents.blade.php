@@ -11,6 +11,11 @@
                     <a class="js-cookie-consent-agree cookie-consent__agree flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium text-yellow-800 bg-yellow-400 hover:bg-yellow-300">
                         {{ trans('cookie-consent::texts.agree') }}
                     </a>
+                    @if (config('cookie-consent.refuse_enabled'))
+                        <a class="js-cookie-consent-refuse mt-1 cookie-consent__refuse flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium text-yellow-800 bg-yellow-400 hover:bg-yellow-300">
+                        {{ trans('cookie-consent::texts.refuse') }}
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>

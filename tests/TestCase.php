@@ -40,11 +40,28 @@ abstract class TestCase extends OrchestraTestCase
         $this->assertFalse($this->isConsentDialogDisplayed($html), 'Failed to assert that the consent dialog is not being displayed.');
     }
 
+    protected function assertRefuseButtonDisplayed(string $html)
+    {
+        $this->assertTrue($this->isRefuseButtonDisplayed($html), 'Failed to assert that the refuse button is displayed.');
+    }
+
+    protected function assertRefuseButtonIsNotDisplayed(string $html)
+    {
+        $this->assertFalse($this->isRefuseButtonDisplayed($html), 'Failed to assert that the refuse button is not being displayed.');
+    }
+
     protected function isConsentDialogDisplayed(string $html): bool
     {
         return \Illuminate\Support\Str::contains($html, [
             trans('cookie-consent::texts.message'),
-            trans('cookie-consent::texts.button_text'),
+            trans('cookie-consent::texts.agree'),
         ]);
     }
+
+    protected function isRefuseButtonDisplayed(string $html): bool
+    {
+        return \Illuminate\Support\Str::contains($html,
+            trans('cookie-consent::texts.refuse'));
+    }
+
 }

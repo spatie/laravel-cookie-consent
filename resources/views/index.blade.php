@@ -6,16 +6,25 @@
 
         window.laravelCookieConsent = (function () {
 
-            const COOKIE_VALUE = 1;
+            const ACCEPT_COOKIE_VALUE = 1;
+            const REFUSE_COOKIE_VALUE = 0;
             const COOKIE_DOMAIN = '{{ config('session.domain') ?? request()->getHost() }}';
 
             function consentWithCookies() {
-                setCookie('{{ $cookieConsentConfig['cookie_name'] }}', COOKIE_VALUE, {{ $cookieConsentConfig['cookie_lifetime'] }});
+                setCookie('{{ $cookieConsentConfig['cookie_name'] }}', ACCEPT_COOKIE_VALUE, {{ $cookieConsentConfig['cookie_lifetime'] }});
+                hideCookieDialog();
+            }
+
+            function refuseCookies() {
+                setCookie('{{ $cookieConsentConfig['cookie_name'] }}', REFUSE_COOKIE_VALUE, {{ $cookieConsentConfig['cookie_lifetime'] }});
                 hideCookieDialog();
             }
 
             function cookieExists(name) {
-                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+                return (
+                    document.cookie.split('; ').indexOf(name + '=' + ACCEPT_COOKIE_VALUE) !== -1
+                    || document.cookie.split('; ').indexOf(name + '=' + REFUSE_COOKIE_VALUE) !== -1
+                );
             }
 
             function hideCookieDialog() {
@@ -40,14 +49,21 @@
                 hideCookieDialog();
             }
 
-            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+            const acceptButtons = document.getElementsByClassName('js-cookie-consent-agree');
 
-            for (let i = 0; i < buttons.length; ++i) {
-                buttons[i].addEventListener('click', consentWithCookies);
+            for (let i = 0; i < acceptButtons.length; ++i) {
+                acceptButtons[i].addEventListener('click', consentWithCookies);
+            }
+
+            const refuseButtons = document.getElementsByClassName('js-cookie-consent-refuse');
+
+            for (let i = 0; i < refuseButtons.length; ++i) {
+                refuseButtons[i].addEventListener('click', refuseCookies);
             }
 
             return {
                 consentWithCookies: consentWithCookies,
+                refuseCookies: refuseCookies,
                 hideCookieDialog: hideCookieDialog
             };
         })();
