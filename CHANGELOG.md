@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.1.2 - 2021-08-19
+
+- fix translation
+
 ## 3.1.1 - 2021-05-28
 
 - added bengali translation (#160)
