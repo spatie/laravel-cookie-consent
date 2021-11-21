@@ -63,8 +63,13 @@ return [
 To display the dialog all you have to do is include this view in your template:
 
 ```blade
-//in your blade template
+//in your blade template 
+
+//if you're using spatie/laravel-cookie-consent version 3
 @include('cookie-consent::index')
+
+//if you're using spatie/laravel-cookie-consent version 2
+@include('cookieConsent::index')
 ```
 
 This will render the following dialog that, when styled, will look very much like this one.
