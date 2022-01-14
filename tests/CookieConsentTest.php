@@ -32,7 +32,7 @@ class CookieConsentTest extends TestCase
     /** @test */
     public function it_will_not_show_the_cookie_consent_view_when_the_user_has_already_consented()
     {
-        request()->cookies->set(config('cookie-consent.cookie_name'), cookie(config('cookie-consent.cookie_name'), 1));
+        request()->cookies->set(config('cookie-consent.cookie_name'), config('cookie-consent.cookie_name'), 1);
 
         $html = view('layout')->render();
 
