@@ -2,6 +2,10 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.2.0 - 2022-01-14
+
+- support Laravel 9
+
 ## 3.1.2 - 2021-08-19
 
 - fix translation
