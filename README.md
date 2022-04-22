@@ -61,6 +61,8 @@ return [
 ];
 ```
 
+The cookie domain is set by the 'domain' key in config/session.php, make sure you add a value in your .env for SESSION_DOMAIN. If you are using a domain with a port in the url such as 'localhost:3000', this package will not work until you do so.
+
 ## Usage
 
 To display the dialog all you have to do is include this view in your template:
