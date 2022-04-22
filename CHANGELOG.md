@@ -2,6 +2,19 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.2.1 - 2022-04-22
+
+## What's Changed
+
+- add note about cookie domain to docs by @blite in https://github.com/spatie/laravel-cookie-consent/pull/180
+- Add contrast on text, anchor -> button by @blite in https://github.com/spatie/laravel-cookie-consent/pull/179
+
+## New Contributors
+
+- @blite made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/180
+
+**Full Changelog**: https://github.com/spatie/laravel-cookie-consent/compare/3.2.0...3.2.1
+
 ## 3.2.0 - 2022-01-14
 
 - support Laravel 9
