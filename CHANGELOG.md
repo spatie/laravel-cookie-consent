@@ -2,6 +2,18 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.2.2 - 2022-06-03
+
+### What's Changed
+
+- ✨ feat(locale): add `th` locale(Thailand language) by @izcream in https://github.com/spatie/laravel-cookie-consent/pull/181
+
+### New Contributors
+
+- @izcream made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/181
+
+**Full Changelog**: https://github.com/spatie/laravel-cookie-consent/compare/3.2.1...3.2.2
+
 ## 3.2.1 - 2022-04-22
 
 ## What's Changed
