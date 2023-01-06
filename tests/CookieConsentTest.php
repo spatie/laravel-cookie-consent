@@ -1,50 +1,34 @@
 <?php
 
-namespace Spatie\CookieConsent\Test;
+it('provides translations', function () {
+    assertTranslationExists('cookie-consent::texts.message');
+    assertTranslationExists('cookie-consent::texts.agree');
+});
 
-class CookieConsentTest extends TestCase
-{
-    /** @test */
-    public function it_provides_translations()
-    {
-        $this->assertTranslationExists('cookie-consent::texts.message');
-        $this->assertTranslationExists('cookie-consent::texts.agree');
-    }
+it('can display a cookie consent view', function () {
+    $html = view('layout')->render();
 
-    /** @test */
-    public function it_can_display_a_cookie_consent_view()
-    {
-        $html = view('layout')->render();
+    assertConsentDialogDisplayed($html);
+});
 
-        $this->assertConsentDialogDisplayed($html);
-    }
+it('will not show the cookie consent view when the package is disabled', function () {
+    config()->set('cookie-consent.enabled', false);
 
-    /** @test */
-    public function it_will_not_show_the_cookie_consent_view_when_the_package_is_disabled()
-    {
-        $this->app['config']->set('cookie-consent.enabled', false);
+    $html = view('layout')->render();
 
-        $html = view('layout')->render();
+    assertConsentDialogIsNotDisplayed($html);
+});
 
-        $this->assertConsentDialogIsNotDisplayed($html);
-    }
+it('will not show the cookie consent view when the user has already consented', function () {
+    request()->cookies->set(config('cookie-consent.cookie_name'), config('cookie-consent.cookie_name'), 1);
 
-    /** @test */
-    public function it_will_not_show_the_cookie_consent_view_when_the_user_has_already_consented()
-    {
-        request()->cookies->set(config('cookie-consent.cookie_name'), config('cookie-consent.cookie_name'), 1);
+    $html = view('layout')->render();
 
-        $html = view('layout')->render();
+    assertConsentDialogIsNotDisplayed($html);
+});
 
-        $this->assertConsentDialogIsNotDisplayed($html);
-    }
+it('contains the necessary CSS classes for Javascript functionality', function () {
+    $html = view('dialog')->render();
 
-    /** @test */
-    public function it_contains_the_necessary_css_classes_for_javascript_functionality()
-    {
-        $html = view('dialog')->render();
-
-        $this->assertStringContainsString('js-cookie-consent', $html);
-        $this->assertStringContainsString('js-cookie-consent-agree', $html);
-    }
-}
+    expect($html)->toContain('js-cookie-consent', 'js-cookie-consent-agree');
+});
