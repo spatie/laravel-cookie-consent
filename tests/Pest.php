@@ -2,6 +2,7 @@
 
 use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertTrue;
+use \Illuminate\Support\Str;
 
 uses(Spatie\CookieConsent\Test\TestCase::class)->in('.');
 
@@ -33,7 +34,7 @@ function assertConsentDialogIsNotDisplayed(string $html)
 
 function isConsentDialogDisplayed(string $html): bool
 {
-    return str($html)->contains([
+    return Str::contains($html, [
         trans('cookie-consent::texts.message'),
         trans('cookie-consent::texts.button_text'),
     ]);
