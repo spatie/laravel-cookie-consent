@@ -1,8 +1,8 @@
 <?php
 
+use \Illuminate\Support\Str;
 use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertTrue;
-use \Illuminate\Support\Str;
 
 uses(Spatie\CookieConsent\Test\TestCase::class)->in('.');
 
