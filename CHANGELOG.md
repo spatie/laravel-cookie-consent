@@ -2,6 +2,21 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.2.3 - 2023-01-16
+
+### What's Changed
+
+- Add PHP 8.2 Support by @patinthehat in https://github.com/spatie/laravel-cookie-consent/pull/185
+- Convert all tests to pest by @alexmanase in https://github.com/spatie/laravel-cookie-consent/pull/186
+- feat(locale): add pt_BR (Brazilian Portuguese) by @mateuslecchi in https://github.com/spatie/laravel-cookie-consent/pull/184
+
+### New Contributors
+
+- @alexmanase made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/186
+- @mateuslecchi made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/184
+
+**Full Changelog**: https://github.com/spatie/laravel-cookie-consent/compare/3.2.2...3.2.3
+
 ## 3.2.2 - 2022-06-03
 
 ### What's Changed
