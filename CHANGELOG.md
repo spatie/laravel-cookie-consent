@@ -2,6 +2,18 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.2.4 - 2023-01-25
+
+### What's Changed
+
+- Laravel 10.x Compatibility by @laravel-shift in https://github.com/spatie/laravel-cookie-consent/pull/187
+
+### New Contributors
+
+- @laravel-shift made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/187
+
+**Full Changelog**: https://github.com/spatie/laravel-cookie-consent/compare/3.2.3...3.2.4
+
 ## 3.2.3 - 2023-01-16
 
 ### What's Changed
