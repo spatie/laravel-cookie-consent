@@ -8,8 +8,28 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-cookie-consent/run-tests?label=tests)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 
-All sites owned by EU citizens or targeted towards EU citizens must comply with a crazy EU law. This law requires a dialog to be displayed to inform the users of your websites how cookies are being used. You can read more info on the legislation on [the site of the European Commission](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm#section_2).
+All sites owned by EU citizens or targeted towards EU citizens must comply with a crazy EU law. This law requires a dialog to be displayed to inform the users when you are using _tracking_ cookies. You can read more info on the legislation on [the site of the European Commission](https://commission.europa.eu/resources-partners/europa-web-guide/design-content-and-development/privacy-security-and-legal-notices/cookies-and-similar-technologies_en). Be aware using cookies for a site/web app that is not used for tracking (for example: session cookies) do not fall under this obligation 
 
+quote:
+```
+Cookies and similar technologies requiring consent
+
+Cookies and similar technologies that generally DO need consent
+
+    Social plug-in tracking mechanisms
+    Third party advertising cookies
+    Analytics cookies (except for the exemption described further below)
+
+Cookies and similar technologies that generally do NOT need consent
+
+    User entrada cookies, for the duration of a session
+    Authentication cookies, for the duration of a session
+    User centric security cookies, used to detect authentication abuses and linked to the functionality explicitly requested by the user, for a limited persistent duration
+    Multimedia content player session cookies, such as flash player cookies, for the duration of a session
+    Load balancing session cookies, for the duration of a session
+    User interface customisation cookies, for a browser session or a pocos hours, unless additional information in a prominent location is provided (e.g. “uses cookies” written next to the customisation feature)
+```
+    
 This package provides an easily configurable view to display the message. Also included is JavaScript code to set a cookie when a user agrees with the cookie policy. The package will not display the dialog when that cookie has been set.
 
 Spatie is a web design agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
