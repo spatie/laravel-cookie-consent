@@ -1,46 +1,53 @@
 name: run-tests
 
-on: [push, pull_request]
+on:
+  - push
+  - pull_request
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                php: [8.2, 8.1, 8.0]
-                laravel: [9.*, 8.*, 10.*]
-                dependency-version: [prefer-lowest, prefer-stable]
-                include:
-                    - laravel: 10.*
-                      testbench: 8.*
-                      carbon: ^2.63
-                    - laravel: 9.*
-                      testbench: 7.*
-                      carbon: ^2.63
-                    - laravel: 8.*
-                      testbench: ^6.23
-                      carbon: ^2.63
-                exclude:
-                    - laravel: 10.*
-                      php: 8.0               
+  test:
+    runs-on: ubuntu-latest
 
-        name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
+    strategy:
+      matrix:
+        php: [8.2, 8.1, 8.0]
+        laravel: ['8.*', '9.*', '10.*', '11.*']
+        dependency-version: [prefer-lowest, prefer-stable]
+        include:
+          - laravel: 10.*
+            testbench: 8.*
+            carbon: ^2.63
+          - laravel: 9.*
+            testbench: 7.*
+            carbon: ^2.63
+          - laravel: 8.*
+            testbench: ^6.23
+            carbon: ^2.63
+        exclude:
+          - laravel: 10.*
+            php: 8.0
+          - laravel: 11.*
+            php: 8.1
+          - laravel: 11.*
+            php: 8.0
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql
-                  coverage: none
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            - name: Install dependencies
-              run: |
-                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
-                  composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql
+          coverage: none
 
-            - name: Execute tests
-              run: vendor/bin/pest
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+
+      - name: Execute tests
+        run: vendor/bin/pest
