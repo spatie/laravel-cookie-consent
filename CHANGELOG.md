@@ -2,6 +2,18 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.3.1 - 2024-07-15
+
+### What's Changed
+
+* fix - styling on smaller screens by @antonL95 in https://github.com/spatie/laravel-cookie-consent/pull/196
+
+### New Contributors
+
+* @antonL95 made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/196
+
+**Full Changelog**: https://github.com/spatie/laravel-cookie-consent/compare/3.3.0...3.3.1
+
 ## 3.3.0 - 2024-03-08
 
 ### What's Changed
