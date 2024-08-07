@@ -2,6 +2,18 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.3.2 - 2024-08-07
+
+### What's Changed
+
+* Add catalan translation by @agisbertb in https://github.com/spatie/laravel-cookie-consent/pull/197
+
+### New Contributors
+
+* @agisbertb made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/197
+
+**Full Changelog**: https://github.com/spatie/laravel-cookie-consent/compare/3.3.1...3.3.2
+
 ## 3.3.1 - 2024-07-15
 
 ### What's Changed
