@@ -1,35 +1,21 @@
-# Make your Laravel app comply with the crazy EU cookie law
+# Simple, customizable cookie consent message for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![run-tests](https://github.com/spatie/laravel-cookie-consent/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/laravel-cookie-consent/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-cookie-consent)
 
-All sites owned by EU citizens or targeted towards EU citizens must comply with a crazy EU law. This law requires a dialog to be displayed to inform the users when you are using _tracking_ cookies. You can read more info on the legislation on [the site of the European Commission](https://commission.europa.eu/resources-partners/europa-web-guide/design-content-and-development/privacy-security-and-legal-notices/cookies-and-similar-technologies_en). Be aware using cookies for a site/web app that is not used for tracking (for example: session cookies) do not fall under this obligation 
+This package adds a simple, customizable cookie consent message to your site. When the site loads, the banner appears and lets users consent to cookies. Once consent is given, the banner hides and stays hidden.
 
-quote:
-```
-Cookies and similar technologies requiring consent
+**What this package does not:**
+- Include an option to 'Decline' all cookies, which might be required.
+- Block trackers and cookies before consent. You need to handle this yourself.
+- Include options for different consent categories like "Necessary" or "Marketing".
 
-Cookies and similar technologies that generally DO need consent
+For more advanced cookie consent options in Laravel, consider these alternatives.
 
-    Social plug-in tracking mechanisms
-    Third party advertising cookies
-    Analytics cookies (except for the exemption described further below)
-
-Cookies and similar technologies that generally do NOT need consent
-
-    User entrada cookies, for the duration of a session
-    Authentication cookies, for the duration of a session
-    User centric security cookies, used to detect authentication abuses and linked to the functionality explicitly requested by the user, for a limited persistent duration
-    Multimedia content player session cookies, such as flash player cookies, for the duration of a session
-    Load balancing session cookies, for the duration of a session
-    User interface customisation cookies, for a browser session or a pocos hours, unless additional information in a prominent location is provided (e.g. “uses cookies” written next to the customisation feature)
-```
-    
-This package provides an easily configurable view to display the message. Also included is JavaScript code to set a cookie when a user agrees with the cookie policy. The package will not display the dialog when that cookie has been set.
-
-Spatie is a web design agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
+- [whitecube/laravel-cookie-consent](https://github.com/whitecube/laravel-cookie-consent)
+- [statikbe/laravel-cookie-consent](https://github.com/statikbe/laravel-cookie-consent)
 
 ## Support us
 
@@ -148,7 +134,7 @@ class Kernel extends HttpKernel
 This will automatically add `cookie-consent::index` to the content of your response right before the closing body tag.
 
 ## Notice
-The legislation is pretty very vague on how to display the warning, which texts are necessary, and what options you need to provide. This package will go a long way towards compliance, but if you want to be 100% sure that your website is ok, you should consult a legal expert.
+We are not lawyers and can't provide legal advice. Consult legal professionals what rules apply to your project.
 
 ## Changelog
 
