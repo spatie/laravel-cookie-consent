@@ -117,6 +117,16 @@ This will copy the `index` and `dialogContents` view files over to `resources/vi
 
 Instead of including `cookie-consent::index` in your view you could opt to add the `Spatie\CookieConsent\CookieConsentMiddleware` to your kernel:
 
+In Laravel 11 open /bootstrap/app.php and register them there:
+
+```php
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->append(\Spatie\CookieConsent\CookieConsentMiddleware::class);
+    })
+```
+
+In Laravel 9 and 10 you can add them in app/Http/Kernel.php:
+
 ```php
 // app/Http/Kernel.php
 
