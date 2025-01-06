@@ -17,6 +17,10 @@ For more advanced cookie consent options in Laravel, consider these alternatives
 - [whitecube/laravel-cookie-consent](https://github.com/whitecube/laravel-cookie-consent)
 - [statikbe/laravel-cookie-consent](https://github.com/statikbe/laravel-cookie-consent)
 
+If you need an implementation of cookie consent for [Filament](https://github.com/filamentphp/filament) you can evaluate this plugin:
+
+- [marcogermani87/filament-cookie-consent](https://github.com/marcogermani87/filament-cookie-consent)
+
 ## Support us
 
 [<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-cookie-consent.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-cookie-consent)
