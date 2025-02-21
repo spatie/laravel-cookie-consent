@@ -2,6 +2,23 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.3.3 - 2025-02-21
+
+### What's Changed
+
+* Update README.md by @jimirobaer in https://github.com/spatie/laravel-cookie-consent/pull/198
+* Add L11 global middleware syntax. by @HamzahMadni in https://github.com/spatie/laravel-cookie-consent/pull/201
+* Updated README with suggested FIlament plugin by @marcogermani87 in https://github.com/spatie/laravel-cookie-consent/pull/202
+* Laravel 12.x Compatibility by @laravel-shift in https://github.com/spatie/laravel-cookie-consent/pull/203
+
+### New Contributors
+
+* @jimirobaer made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/198
+* @HamzahMadni made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/201
+* @marcogermani87 made their first contribution in https://github.com/spatie/laravel-cookie-consent/pull/202
+
+**Full Changelog**: https://github.com/spatie/laravel-cookie-consent/compare/3.3.2...3.3.3
+
 ## 3.3.2 - 2024-08-07
 
 ### What's Changed
