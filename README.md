@@ -178,3 +178,52 @@ If you discover any security-related issues, please email freek@spatie.be instea
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+### Positioning the cookie banner (fixed / floating)
+
+By default, the banner is rendered in the normal page flow.
+If you prefer a floating banner that stays visible regardless of page length,
+you can position it using CSS.
+
+Add the following styles to your main stylesheet or Tailwind configuration:
+
+```css
+.js-cookie-consent {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    max-width: 420px;
+    padding: 16px 20px;
+    background: #111827;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+}
+
+.js-cookie-consent a {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.js-cookie-consent button {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.js-cookie-consent button:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 640px) {
+    .js-cookie-consent {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        max-width: unset;
+    }
+}
