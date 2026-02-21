@@ -2,6 +2,12 @@
 
 All notable changes to `cookie-consent` will be documented in this file
 
+## 3.4.0 - 2026-02-21
+
+### What's Changed
+
+- Add Laravel 13 support
+
 ## 3.3.3 - 2025-02-21
 
 ### What's Changed
