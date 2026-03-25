@@ -27,15 +27,15 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^10.0|^11.0|^12.0",
-        "illuminate/view": "^10.0|^11.0|^12.0",
-        "illuminate/cookie": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/view": "^11.0|^12.0|^13.0",
+        "illuminate/cookie": "^11.0|^12.0|^13.0",
         "spatie/laravel-package-tools": "^1.9"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
-        "orchestra/testbench": "^8.0|^9.0|^10.0",
-        "pestphp/pest": "^2.34|^3.7"
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.7|^4.0"
     },
     "autoload": {
         "psr-4": {
